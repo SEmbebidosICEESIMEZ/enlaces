@@ -1,6 +1,5 @@
 # Enlaces
 Wokwi - Simulador para Raspberry Pi Pico y ESP32  https://wokwi.com/
-
 ALIEXPRESS 
 
 BRAZO_ALUMINIO 
@@ -666,6 +665,13 @@ BARRA_LEDS_3
 
 CARRITO_RUEDA_LOCA 
 
+iSomos su mejor opción! 
+r-- SUTIDORA ELÉCTRICA C.V 
+la diferencia 
+Corregidora 47, Local -A, Col. Centro, Del. Cuauhtemoc, C.P. 06060 CDMX 
+reis. 5542-7003 / 5542-6911 whatsapp: (55) 59694054 
+Correo 
+n Facebook:@Surtidora Electrica Riky S.a De c.v 
 MÓDULO_MOS_FET 
 
 MÓDULO_D184 
@@ -1113,4 +1119,93 @@ VSC_RASPBERRY
 
 <<Raspberry_FALLAS_ENE2023.pdf>>
 <<Raspberry_FALLAS_ABR2021.pdf>>
+Raspberry: solving problems & sharing experiences 
+Errores al grabar la USD debido a fallas de la memoria. Es conveniente que el Internet sea cableado 
+para mayor seguridad, confiabilidad y rapidez, para evitar errores en la descarga. 
+-Se grabó la memoria uSD, pero no muestra imagen en la pantalla de video 
+Sol. Se conectó la salida HDMI con un cable a una LapTop, error grave, se pensó que la LapTop 
+tiene entrada HDMI, pero se conectó salida con salida. La salida HDMI de la raspberry se debe 
+conectar a una entrada como un TV o Smart TV o monitor HDMI 
+Sol. Faltaba configurar la pantalla para indicar la entrada correcta. 
+Sol. Se dio vuelta al conector de entrada de alimentación USB Power, y se marcó la posición en la 
+que funcionó correctamente, causa: posible falso contacto. Se recomienda detener bien el 
+conector de alimentación al enchufar y no sujetar toda la tarjeta, solo el conector para no forzar 
+las conexiones.. 
+-Se quiere modificar la resolución de la pantalla y no es posible. 
+En el tutorial de configuración de la pantalla se sugirió cambiar la salida de video al tipo analógico 
+o compuesto, para no tener que estar conectado a la pantalla, ya que en caso de desconectarse se 
+pierde la conexión remota. 
+Sol. Al tener configurado el video compuesto la resolución es fija, por lo que la solución es quitar el 
+video compuesto y mantener el cable conectado aunque la pantalla esté apagada y ya se tiene 
+mayor resolución y se puede modificar. 
+Se pierde la comunicación inalámbrica(wifi) en una sesión o al volver a conectar. 
+Sol. Un posible fallo de energía, falso contacto en la toma de corriente, ya que algunas extensiones 
+no hacen un contacto firme, en la raspberry falso contacto en cable de corriente, cable HDMI y del 
+lado de la pantalla. 
+En caso de compartir ruteador, se recomienda poner una IP estática(ver videotutorial). Por 
+ejemplo, si el ruteador asigna de manera dinámica una IP 192.168.0.6, ubicarla de manera estática 
+en 192.158.0.50. 
+Nota importante: cuando se configura la raspberry al arrancar la tarjeta por primera vez, es 
+obligada hacerlo con una pantalla HM' y para realizar la comunicación remota por VNC, es 
+necesario mantener conectada la tarjeta a la pantalla, aunque esté apagada la pantalla, porque si 
+se desconecta, al querer conectarse de manera remota, manda el siguiente mensaje: 
+"Actualmente no se puede mostrar el escritorio" 
+Por lo tanto, es necesario dejar conectada la pantalla. 
+Ahora bien, si no hay forma de dejar conectada la pantalla por HDMI, será necesario activar la 
+opción de salida de video compuesto o analógico, para poder quitar el cable HDMI, pero se corre 
+el riesgo de que si se pierde la comunicación remota, no hay forma de recuperar la imagen en la 
+pantalla HDMI, a menos que se conecte un monitor de video compuesto o analógico para poder 
+revisar el problema de conexión remota o de red. La otra forma es conectarse por SSH. 
+Un recurso adicional es que si se perdió conectividad inalámbrica, se puede conectar el cable UTP 
+para comunicación Ethernet y verificar si el ruteador le asigna una dirección dinámica a la tarjeta y 
+tratar de comunicarse a través de la nueva dirección. Se tiene otra recurso que es el ingresar a la 
+configuración del ruteador/modem, a través del explorador de internet p. ej. la dirección para un 
+ruteadorTELMEX es 192.168.1.254 para verificar las direcciones que ha asignado a la tarjeta 
+raspberry de manera cableada(ethernet) y de manera inalámbrica(wifi), una vez determinada la 
+dirección, se puede tratar de comunicar con VNC viewer, a través de la dirección encontrada en el 
+ruteador y recuperar la comunicación y volver a reconfigurar. Ver este ejemplo en videotutorial. 
+-Con el programa Blink no se puede acceder a los puertos. Sol. En los enlaces de TEAMS en 
+raspberry hay un enlace a wiringPi de donde se verifica la versión con "gpio —v" debe ser la 2.52, 
+en caso contrario cambiarse a la carpeta /tmp con el comando cd /tmp y después cargar el 
+programa con: 
+wget https://project-downloads.drogon.net/wiringpi-latest.deb 
+y por último instalar con: 
+sudo dpkg -i wiringpi-latest.deb 
+-El programa wiringPl no se puede actualizar y marca un error, al revisar la página se vio que se 
+tradujo al español y los comandos no eran los adecuados en inglés sino en español. Se puso la 
+página en inglés y con los comandos correctos ya funcionó. 
+-CLIENTE/SERVIDOR SOCKETS.- Con la plataforma W3schhols, en el ejemplo de Raspi WebSocket 
+No responde ni el cliente ni el servidor, se probó con otros programas de ejemplo y con la utilería 
+express sin resultado. El problema es que los programas de servidor y cliente no son compatibles. 
+Desde la instalación es necesario mantener la pista de los programas instalado, creando el archivo 
+packet.json con el comando de terminal en la carpeta de los proyectos: 
+VNodetest/ $ npm 
+Es importante que este comando sea previo a la instalación del socket: 
+VNodetest/ $ 
+sudo apt-get update 
+VNodetest/ $ 
+sudo apt-get dist-upgrade 
+VNodetest/ $ 
+npm install socket. io 
+-save 
+Al instalarse el socket mostrará las versiones instaladas y también quedan registradas en el archivo 
+packet.json, el cual puede ser consultado para evitar errores de compatibilidad. 
+En la plataforma W3schhols se utiliza socket para el cliente, pero el programa index.html para el 
+uso de dichos sockets no instala biblioteca, ya que se tendría que hacer en cada máquina cliente 
+que quiera acceder al servidor, por lo que la forma más sencilla es que el servidor cliente se 
+descargue o acceda de internet mediante la etiqueta de HTML: 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.O.3/socket.io.js"></script> 
+include socket.io client side script 
+En donde se observa que la versión del socket cliente es la 2.03, por lo que hay que compararla 
+con la versión de socket servidor, ubicada en el archivo packet.json. En raspberry pi 3 0 4 al 
+actualizar el Sistema Operativo y manteniendo el nade vlO.21, la versión del socket es la 3.0.4, por 
+lo que no funcionará. Por lo tanto, es necesaria ingresar a la página https://socket.io/ 
+Resources Links CON, en donde aparecerán los enlaces con las versiones correspondientes, 
+que deberán de ser copiados para pegarlos en el programa index.html con la misma versión del 
+servidor, en este caso la versión 3.0.4: 
+https://cdnjs.cloudfiare.com/aiax/libs/socket.io/3.O.4/socket.io.js 
+Una vez corregido el enlace del socket cliente, ya debe funcionar la conexión entre cliente y 
+servidor. 
+Una vez corregido el enlace del socket cliente, ya debe funcionar la conexión entre cliente y 
+servidor. 
  
