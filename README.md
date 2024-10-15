@@ -1,6 +1,8 @@
 # Enlaces
 Thonny IDE - https://thonny.org/
 
+Python - https://www.python.org/downloads/
+
 Arduino IDE - https://www.arduino.cc/en/software
 
 Visual Studio Code - https://code.visualstudio.com/downloadg
