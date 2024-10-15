@@ -5,7 +5,7 @@ Python - https://www.python.org/downloads/
 
 Arduino IDE - https://www.arduino.cc/en/software
 
-Visual Studio Code - https://code.visualstudio.com/downloadg
+Visual Studio Code - https://code.visualstudio.com/download
 
 Raspberry Pi Pico Documentation MicroPython - https://www.raspberrypi.com/documentation/microcontrollers/micropython.html
 
