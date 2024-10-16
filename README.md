@@ -7,6 +7,10 @@ Arduino IDE - https://www.arduino.cc/en/software
 
 Visual Studio Code - https://code.visualstudio.com/download
 
+ESP-IDF Programming Guide - https://docs.espressif.com/projects/esp-idf/en/v5.3.1/esp32/index.html
+
+Standard Setup of Toolchain for Windows - https://docs.espressif.com/projects/esp-idf/en/v5.3.1/esp32/get-started/windows-setup.html
+
 Raspberry Pi Pico Documentation MicroPython - https://www.raspberrypi.com/documentation/microcontrollers/micropython.html
 
 URLs de tarjetas adicionales. Raspberry Pi Pico - https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
